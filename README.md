@@ -1,4 +1,4 @@
-# WhiteRabbit
+# WhiteRabbit [![Build Status](https://travis-ci.org/send/white_rabbit.svg?branch=master)](https://travis-ci.org/send/white_rabbit)
 
 "Oh dear! Oh dear! I shall be too late!" WhiteRabbit is a library for business date usages like closing date.
 
