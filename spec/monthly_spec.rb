@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require "spec_helper"
 
 describe WhiteRabbit::Monthly do
@@ -35,6 +36,36 @@ describe WhiteRabbit::Monthly do
     it do
       expect(mod.term(2016, 3, closing_date: 20))
         .to eq Date.new(2016, 2, 21)..Date.new(2016, 3, 20)
+    end
+  end
+
+  context 'evaled methods' do
+    describe '.first_saturday_of' do
+      it { expect(mod.first_saturday_of(2016, 10)).to eq Date.new(2016, 10, 1) }
+    end
+
+    describe '.second_friday_of' do
+      it { expect(mod.second_friday_of(2016, 9)).to eq Date.new(2016, 9, 9) }
+    end
+
+    describe '.third_thursday_of' do
+      it { expect(mod.third_thursday_of(2016, 8)).to eq Date.new(2016, 8, 18) }
+    end
+
+    describe '.fourth_wednesday_of' do
+      it { expect(mod.fourth_wednesday_of(2016, 7)).to eq Date.new(2016, 7, 27) }
+    end
+
+    describe '.fifth_sunday_of' do
+      it { expect(mod.fifth_sunday_of(2016, 5)).to eq Date.new(2016, 5, 29) }
+    end
+
+    describe '.first_monday_of' do
+      it { expect(mod.first_monday_of(2016, 4)).to eq Date.new(2016, 4, 4) }
+    end
+
+    describe '.second_tuesday_of' do
+      it { expect(mod.second_tuesday_of(2016, 3)).to eq Date.new(2016, 3, 8) }
     end
   end
 end

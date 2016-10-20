@@ -36,7 +36,7 @@ module WhiteRabbit
         class_eval <<-METHODS
           def self.#{nth}_#{weekday}_of(year, month)
             first = Date.new(year, month, 1)
-            wday_offset = (7 - first + #{wday}) % 7
+            wday_offset = (7 - first.wday + #{wday}) % 7
             week_offset = 7 * #{week}
             first + (wday_offset + week_offset)
           end
