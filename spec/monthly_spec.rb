@@ -99,33 +99,67 @@ describe WhiteHare::Monthly do
 
     end
 
-    describe '.first_saturday_of' do
+    describe '.first_saturday' do
       it { expect(Date.new(2016, 10, 5).first_saturday).to eq Date.new(2016, 10, 1) }
     end
 
-    describe '.second_friday_of' do
+    describe '.first_saturday?' do
+      it { expect(Date.new(2016, 10, 1).first_saturday?).to be true }
+      it { expect(Date.new(2016, 10, 9).first_saturday?).to be false }
+    end
+
+    describe '.second_friday' do
       it { expect(Date.new(2016, 9, 10).second_friday).to eq Date.new(2016, 9, 9) }
     end
 
-    describe '.third_thursday_of' do
+    describe '.second_friday' do
+      it { expect(Date.new(2016, 9, 9).second_friday?).to be true }
+      it { expect(Date.new(2016, 9, 10).second_friday?).to be false }
+    end
+
+    describe '.third_thursday' do
       it { expect(Date.new(2016, 8, 10).third_thursday).to eq Date.new(2016, 8, 18) }
     end
 
-    describe '.fourth_wednesday_of' do
+    describe '.third_thursday_' do
+      it { expect(Date.new(2016, 8, 18).third_thursday?).to be true }
+      it { expect(Date.new(2016, 8, 11).third_thursday?).to be false }
+    end
+
+    describe '.fourth_wednesday' do
       it { expect(Date.new(2016, 7, 5).fourth_wednesday).to eq Date.new(2016, 7, 27) }
     end
 
-    describe '.fifth_sunday_of' do
+    describe '.fourth_wednesday?' do
+      it { expect(Date.new(2016, 7, 27).fourth_wednesday?).to be true }
+      it { expect(Date.new(2016, 7, 5).fourth_wednesday?).to be false }
+    end
+
+    describe '.fifth_sunday' do
       it { expect(Date.new(2016, 5, 18).fifth_sunday).to eq Date.new(2016, 5, 29) }
     end
 
-    describe '.first_monday_of' do
+    describe '.fifth_sunday?' do
+      it { expect(Date.new(2016, 5, 29).fifth_sunday?).to be true }
+      it { expect(Date.new(2016, 5, 18).fifth_sunday?).to be false }
+    end
+
+    describe '.first_monday' do
       it { expect(Date.new(2016, 4, 28).first_monday).to eq Date.new(2016, 4, 4) }
     end
 
-    describe '.second_tuesday_of' do
+    describe '.first_monday?' do
+      it { expect(Date.new(2016, 4, 4).first_monday?).to be true }
+      it { expect(Date.new(2016, 4, 28).first_monday?).to be false }
+    end
+
+    describe '.second_tuesday' do
       it { expect(Date.new(2016, 3, 31).second_tuesday).to eq Date.new(2016, 3, 8) }
     end
 
+    describe '.second_tuesday?' do
+      it { expect(Date.new(2016, 3, 8).second_tuesday?).to be true }
+      it { expect(Date.new(2016, 3, 31).second_tuesday?).to be false }
+    end
   end
 end
