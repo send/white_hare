@@ -76,6 +76,10 @@ module WhiteHare
             def #{nth}_#{weekday}
               WhiteHare::Monthly.#{nth}_#{weekday}_of(year, month)
             end
+
+            def #{nth}_#{weekday}?
+              self == #{nth}_#{weekday}
+            end
           METHODS
         end
       end
