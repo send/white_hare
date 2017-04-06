@@ -1,6 +1,8 @@
 # WhiteHare [![Build Status](https://travis-ci.org/send/white_hare.svg?branch=master)](https://travis-ci.org/send/white_hare)
 
-"Oh dear! Oh dear! I shall be too late!" WhiteHare is a library for business date usages like closing date.
+"Oh dear! Oh dear! I shall be too late!"
+
+WhiteHare is a library for business date usages like closing date.
 
 ## Installation
 
