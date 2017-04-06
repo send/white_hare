@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'white_rabbit/version'
-require 'white_rabbit/monthly'
+require 'white_hare/version'
+require 'white_hare/monthly'
 
-module WhiteRabbit
+module WhiteHare
   # Your code goes here...
 end

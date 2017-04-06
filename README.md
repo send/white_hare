@@ -1,13 +1,13 @@
-# WhiteRabbit [![Build Status](https://travis-ci.org/send/white_rabbit.svg?branch=master)](https://travis-ci.org/send/white_rabbit)
+# WhiteHare [![Build Status](https://travis-ci.org/send/white_hare.svg?branch=master)](https://travis-ci.org/send/white_hare)
 
-"Oh dear! Oh dear! I shall be too late!" WhiteRabbit is a library for business date usages like closing date.
+"Oh dear! Oh dear! I shall be too late!" WhiteHare is a library for business date usages like closing date.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'white_rabbit'
+gem 'white_hare'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install white_rabbit
+    $ gem install white_hare
 
 ## Usage
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/send/white_rabbit.
+Bug reports and pull requests are welcome on GitHub at https://github.com/send/white_hare.
 
 
 ## License

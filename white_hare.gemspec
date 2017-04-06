@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'white_rabbit/version'
+require 'white_hare/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "white_rabbit"
-  spec.version       = WhiteRabbit::VERSION
+  spec.name          = "white_hare"
+  spec.version       = WhiteHare::VERSION
   spec.authors       = ["SAKAI, Kazuaki"]
   spec.email         = ["kaz.july.7@gmail.com"]
 
   spec.summary       = %q{A library for business date usages}
-  spec.description   = %q{WhiteRabbit is a library for business date usage like the closing date.}
-  spec.homepage      = "https://github.com/send/white_rabbit"
+  spec.description   = %q{WhiteHare is a library for business date usage like the closing date.}
+  spec.homepage      = "https://github.com/send/white_hare"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|

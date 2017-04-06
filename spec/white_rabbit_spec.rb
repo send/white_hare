@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 require 'spec_helper'
 
-describe WhiteRabbit do
+describe WhiteHare do
   it 'has a version number' do
-    expect(WhiteRabbit::VERSION).not_to be nil
+    expect(WhiteHare::VERSION).not_to be nil
   end
 end

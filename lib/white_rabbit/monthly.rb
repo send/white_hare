@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module WhiteRabbit
+module WhiteHare
   module Monthly
     def self.next_month(year, month, day)
       Date.new(year, month, day) >> 1
@@ -48,24 +48,24 @@ module WhiteRabbit
           self.included?(DateAndTime::Calculations)
       )
         def next_month
-          WhiteRabbit::Monthly.next_month(year, month, day)
+          WhiteHare::Monthly.next_month(year, month, day)
         end
 
         def prev_month
-          WhiteRabbit::Monthly.prev_month(year, month, day)
+          WhiteHare::Monthly.prev_month(year, month, day)
         end
       end
 
       def beginning_of_monthly(closing_date = nil)
-        WhiteRabbit::Monthly.beginning_of(year, month, closing_date: closing_date)
+        WhiteHare::Monthly.beginning_of(year, month, closing_date: closing_date)
       end
 
       def end_of_monthly(closing_date = nil)
-        WhiteRabbit::Monthly.end_of(year, month, closing_date: closing_date)
+        WhiteHare::Monthly.end_of(year, month, closing_date: closing_date)
       end
 
       def monthly_term(closing_date = nil)
-        WhiteRabbit::Monthly.term(year, month, closing_date: closing_date)
+        WhiteHare::Monthly.term(year, month, closing_date: closing_date)
       end
 
       %w(
@@ -74,7 +74,7 @@ module WhiteRabbit
         %w(first second third fourth fifth).each_with_index do |nth, week|
           module_eval <<-METHODS
             def #{nth}_#{weekday}
-              WhiteRabbit::Monthly.#{nth}_#{weekday}_of(year, month)
+              WhiteHare::Monthly.#{nth}_#{weekday}_of(year, month)
             end
           METHODS
         end

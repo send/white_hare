@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 require "spec_helper"
 
-describe WhiteRabbit::Monthly do
-  subject(:mod) { WhiteRabbit::Monthly }
+describe WhiteHare::Monthly do
+  subject(:mod) { WhiteHare::Monthly }
 
   describe '.next_month' do
     it { expect(mod.next_month(2016, 5, 4)).to eq Date.new(2016, 6, 4) }
@@ -70,7 +70,7 @@ describe WhiteRabbit::Monthly do
   end
 
   context 'refinement Date' do
-    using WhiteRabbit::Monthly
+    using WhiteHare::Monthly
 
     describe '.next_month' do
       it { expect(Date.new(2016, 5, 4).next_month).to eq Date.new(2016, 6, 4) }
