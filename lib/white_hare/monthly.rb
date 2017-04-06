@@ -45,7 +45,7 @@ module WhiteHare
       # Active Support has same methods below.
       unless (
           defined?(DateAndTime::Calculations) &&
-          self.included?(DateAndTime::Calculations)
+          self.include?(DateAndTime::Calculations)
       )
         def next_month
           WhiteHare::Monthly.next_month(year, month, day)
