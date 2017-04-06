@@ -2,15 +2,12 @@
 
 module WhiteRabbit
   module Monthly
-
     def self.next_month(year, month, day)
-      return  Date.new(year + 1, 1, day) if month == 12
-      Date.new(year, month + 1, day)
+      Date.new(year, month, day) >> 1
     end
 
     def self.prev_month(year, month, day)
-      return Date.new(year - 1, 12, day) if month == 1
-      Date.new(year, month - 1, day)
+      Date.new(year, month, day) << 1
     end
 
     def self.beginning_of(year, month, closing_date: nil)
@@ -33,7 +30,7 @@ module WhiteRabbit
       sunday monday tuesday wednesday thursday friday saturday
     ).each_with_index do |weekday, wday|
       %w(first second third fourth fifth).each_with_index do |nth, week|
-        class_eval <<-METHODS
+        module_eval <<-METHODS
           def self.#{nth}_#{weekday}_of(year, month)
             first = Date.new(year, month, 1)
             wday_offset = (7 - first.wday + #{wday}) % 7
@@ -41,6 +38,46 @@ module WhiteRabbit
             first + (wday_offset + week_offset)
           end
         METHODS
+      end
+    end
+
+    refine Date do
+      # Active Support has same methods below.
+      unless (
+          defined?(DateAndTime::Calculations) &&
+          self.included?(DateAndTime::Calculations)
+      )
+        def next_month
+          WhiteRabbit::Monthly.next_month(year, month, day)
+        end
+
+        def prev_month
+          WhiteRabbit::Monthly.prev_month(year, month, day)
+        end
+      end
+
+      def beginning_of_monthly(closing_date = nil)
+        WhiteRabbit::Monthly.beginning_of(year, month, closing_date: closing_date)
+      end
+
+      def end_of_monthly(closing_date = nil)
+        WhiteRabbit::Monthly.end_of(year, month, closing_date: closing_date)
+      end
+
+      def monthly_term(closing_date = nil)
+        WhiteRabbit::Monthly.term(year, month, closing_date: closing_date)
+      end
+
+      %w(
+        sunday monday tuesday wednesday thursday friday saturday
+      ).each_with_index do |weekday, wday|
+        %w(first second third fourth fifth).each_with_index do |nth, week|
+          module_eval <<-METHODS
+            def #{nth}_#{weekday}
+              WhiteRabbit::Monthly.#{nth}_#{weekday}_of(year, month)
+            end
+          METHODS
+        end
       end
     end
   end
